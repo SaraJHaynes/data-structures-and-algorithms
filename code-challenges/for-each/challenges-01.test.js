@@ -15,7 +15,9 @@ const greeting = (word) => {
 
 const speaker = (message, callback) => {
   // Solution code here...
-  return greeting(message);
+
+  return callback(message);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,7 +64,9 @@ Return the modified array.
 
 const removeOne = (num, arr) => {
   // Solution code here...
-  if((num % 3) == 2) {
+
+  if(num % 3 === 2) {
+
     arr.pop;
   }
 };
@@ -71,9 +75,12 @@ const removeOne = (num, arr) => {
 const removeElements = (arr, callback) => {
   // Solution code here...
   for(var i = 0; i < arr.length; i++) {
-    callback(i, arr);
+
+    callback(arr[i], arr);
   }
-  
+
+  return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,10 +90,17 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
+
+   // Solution code here...
+  arr.forEach((item ) => callback(item, arr));
+  return arr;
+  
+
   // Solution code here...
   removeWithForEach.forEach(function(output) {
     console.log(output);
   })
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,9 +113,17 @@ This function should use forEach again, but rather than taking in a callback as 
 This anonymous function should accept up to three arguments: the element, the index, and the array.
 ------------------------------------------------------------------------------------------------ */
 
-const removeWithAnon = (arr) => {
+
+const removeWithAnon = (outerArray) => {
   // Solution code here...
-};
+  outerArray.forEach((element, _, arr) => {
+    if(element % 3 == 2) {
+      arr.pop();
+    }
+  })
+  return outerArray;
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6

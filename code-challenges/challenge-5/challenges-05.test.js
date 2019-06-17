@@ -133,18 +133,7 @@ const stepActions = (recipe) => {
   
   return result;
 };
-// const stepActions = (recipe) => {
-//     let result = [];
-//     for (let i = 0; i < recipe.steps.length; i++) {
-//       let splitArray = recipe.steps[i].split(' ');
-//       let sliceArray = splitArray.slice(0,1);
-  
-//       result[i] = sliceArray
-//     };  
-    
-//     return result;
-    
-//   };
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -270,7 +259,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
